@@ -1,0 +1,1886 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww34000\viewh21380\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <!DOCTYPE html>\
+<html lang="en">\
+<head>\
+    <meta charset="UTF-8">\
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
+    <title>Streamoid OS - AI Operating System for Retail</title>\
+    <script src="https://cdn.tailwindcss.com"></script>\
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">\
+    <style>\
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');\
+        \
+        :root \{\
+            --primary: #4f46e5;\
+            --primary-dark: #4338ca;\
+            --secondary: #3b82f6;\
+            --accent: #6366f1;\
+            --dark: #1e293b;\
+            --light: #ffffff;\
+        \}\
+        \
+        body \{\
+            font-family: 'Inter', sans-serif;\
+            background-color: #ffffff;\
+            color: #1e293b;\
+            overflow-x: hidden;\
+        \}\
+        \
+        .gradient-bg \{\
+            background: linear-gradient(135deg, #4f46e5 0%, #3b82f6 100%);\
+        \}\
+        \
+        .gradient-text \{\
+            background: linear-gradient(135deg, #4f46e5 0%, #3b82f6 100%);\
+            -webkit-background-clip: text;\
+            background-clip: text;\
+            color: transparent;\
+        \}\
+        \
+        .card \{\
+            background: #ffffff;\
+            border: 1px solid rgba(226, 232, 240, 1);\
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);\
+            transition: all 0.3s ease;\
+        \}\
+        \
+        .card:hover \{\
+            transform: translateY(-5px);\
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);\
+            border: 1px solid rgba(79, 70, 229, 0.3);\
+        \}\
+        \
+        .glow \{\
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);\
+        \}\
+        \
+        .feature-icon \{\
+            background: linear-gradient(135deg, #4f46e5 0%, #3b82f6 100%);\
+            border-radius: 12px;\
+            padding: 12px;\
+            display: inline-flex;\
+            align-items: center;\
+            justify-content: center;\
+        \}\
+        \
+        .btn-primary \{\
+            background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);\
+            color: white;\
+            transition: all 0.3s ease;\
+        \}\
+        \
+        .btn-primary:hover \{\
+            background: linear-gradient(135deg, #4338ca 0%, #3730a3 100%);\
+            box-shadow: 0 5px 15px rgba(79, 70, 229, 0.4);\
+        \}\
+        \
+        .btn-secondary \{\
+            background: #ffffff;\
+            border: 1px solid #e2e8f0;\
+            color: #1e293b;\
+            transition: all 0.3s ease;\
+        \}\
+        \
+        .btn-secondary:hover \{\
+            background: #f8fafc;\
+            border: 1px solid #cbd5e1;\
+        \}\
+        \
+        .grid-pattern \{\
+            background-image: \
+                linear-gradient(rgba(79, 70, 229, 0.05) 1px, transparent 1px),\
+                linear-gradient(90deg, rgba(79, 70, 229, 0.05) 1px, transparent 1px);\
+            background-size: 20px 20px;\
+        \}\
+        \
+        .floating \{\
+            animation: float 6s ease-in-out infinite;\
+        \}\
+        \
+        @keyframes float \{\
+            0% \{ transform: translateY(0px); \}\
+            50% \{ transform: translateY(-20px); \}\
+            100% \{ transform: translateY(0px); \}\
+        \}\
+        \
+        .pulse \{\
+            animation: pulse 2s infinite;\
+        \}\
+        \
+        @keyframes pulse \{\
+            0% \{ transform: scale(1); opacity: 1; \}\
+            50% \{ transform: scale(1.05); opacity: 0.8; \}\
+            100% \{ transform: scale(1); opacity: 1; \}\
+        \}\
+        \
+        .orbit \{\
+            position: relative;\
+        \}\
+        \
+        .orbit::before \{\
+            content: '';\
+            position: absolute;\
+            top: -50px;\
+            left: -50px;\
+            right: -50px;\
+            bottom: -50px;\
+            border: 2px solid rgba(79, 70, 229, 0.1);\
+            border-radius: 50%;\
+            animation: rotate 15s linear infinite;\
+        \}\
+        \
+        .orbit::after \{\
+            content: '';\
+            position: absolute;\
+            top: -100px;\
+            left: -100px;\
+            right: -100px;\
+            bottom: -100px;\
+            border: 1px solid rgba(59, 130, 246, 0.1);\
+            border-radius: 50%;\
+            animation: rotate 20s linear infinite reverse;\
+        \}\
+        \
+        @keyframes rotate \{\
+            0% \{ transform: rotate(0deg); \}\
+            100% \{ transform: rotate(360deg); \}\
+        \}\
+        \
+        /* Mobile menu */\
+        .mobile-menu \{\
+            transform: translateX(-100%);\
+            transition: transform 0.3s ease-in-out;\
+        \}\
+        \
+        .mobile-menu.active \{\
+            transform: translateX(0);\
+        \}\
+        \
+        /* Custom scrollbar */\
+        ::-webkit-scrollbar \{\
+            width: 8px;\
+        \}\
+        \
+        ::-webkit-scrollbar-track \{\
+            background: #f1f5f9;\
+        \}\
+        \
+        ::-webkit-scrollbar-thumb \{\
+            background: #4f46e5;\
+            border-radius: 4px;\
+        \}\
+        \
+        ::-webkit-scrollbar-thumb:hover \{\
+            background: #4338ca;\
+        \}\
+        \
+        .section-alt \{\
+            background-color: #f8fafc;\
+        \}\
+        \
+        .dark-section \{\
+            background: linear-gradient(135deg, #4f46e5 0%, #3b82f6 100%);\
+            color: white;\
+        \}\
+        \
+        /* Dropdown styles */\
+        .dropdown \{\
+            position: relative;\
+        \}\
+        \
+        .dropdown-content \{\
+            display: none;\
+            position: absolute;\
+            top: 100%;\
+            left: 0;\
+            background-color: white;\
+            min-width: 220px;\
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);\
+            border-radius: 8px;\
+            padding: 0.5rem 0;\
+            z-index: 50;\
+            opacity: 0;\
+            transform: translateY(10px);\
+            transition: opacity 0.3s ease, transform 0.3s ease;\
+        \}\
+        \
+        .dropdown:hover .dropdown-content \{\
+            display: block;\
+            opacity: 1;\
+            transform: translateY(0);\
+        \}\
+        \
+        /* Auto-scrolling Studios Carousel */\
+        .studios-carousel \{\
+            position: relative;\
+            overflow: hidden;\
+            width: 100%;\
+        \}\
+        \
+        .studios-carousel-inner \{\
+            display: flex;\
+            transition: transform 0.8s ease-in-out;\
+        \}\
+        \
+        .studio-slide \{\
+            min-width: 100%;\
+            opacity: 0;\
+            transform: translateX(100%);\
+            transition: opacity 0.8s ease, transform 0.8s ease;\
+        \}\
+        \
+        .studio-slide.active \{\
+            opacity: 1;\
+            transform: translateX(0);\
+        \}\
+        \
+        .studio-slide.prev \{\
+            transform: translateX(-100%);\
+        \}\
+        \
+        /* Studio Indicators */\
+        .studio-indicators \{\
+            display: flex;\
+            justify-content: center;\
+            margin-top: 2rem;\
+            gap: 0.5rem;\
+        \}\
+        \
+        .studio-indicator \{\
+            width: 3rem;\
+            height: 0.25rem;\
+            background-color: #e2e8f0;\
+            border-radius: 0.125rem;\
+            cursor: pointer;\
+            transition: all 0.3s ease;\
+        \}\
+        \
+        .studio-indicator.active \{\
+            background-color: var(--primary);\
+            width: 4rem;\
+        \}\
+        \
+        /* Progress bar for auto-scroll timing */\
+        .studio-progress \{\
+            position: absolute;\
+            bottom: 0;\
+            left: 0;\
+            height: 3px;\
+            background: linear-gradient(90deg, var(--primary), var(--secondary));\
+            width: 0%;\
+            transition: width linear;\
+            z-index: 10;\
+        \}\
+        \
+        /* Modern Feature Cards - Redesigned */\
+        .modern-feature-card \{\
+            background: white;\
+            border-radius: 1rem;\
+            overflow: hidden;\
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);\
+            transition: all 0.5s ease;\
+            position: relative;\
+            z-index: 1;\
+            height: 100%;\
+            border: 1px solid #f1f5f9;\
+        \}\
+        \
+        .modern-feature-card:hover \{\
+            transform: translateY(-10px);\
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);\
+            border-color: rgba(79, 70, 229, 0.2);\
+        \}\
+        \
+        .modern-feature-card-icon \{\
+            width: 60px;\
+            height: 60px;\
+            border-radius: 16px;\
+            display: flex;\
+            align-items: center;\
+            justify-content: center;\
+            margin-bottom: 1.5rem;\
+            position: relative;\
+            z-index: 2;\
+            background: #f8fafc;\
+            border: 1px solid #f1f5f9;\
+        \}\
+        \
+        .modern-feature-card-icon i \{\
+            font-size: 1.5rem;\
+            color: #4f46e5;\
+        \}\
+        \
+        .modern-feature-card-content \{\
+            position: relative;\
+            z-index: 2;\
+        \}\
+        \
+        /* Tech pattern background */\
+        .tech-pattern \{\
+            position: absolute;\
+            top: 0;\
+            left: 0;\
+            right: 0;\
+            bottom: 0;\
+            opacity: 0.03;\
+            z-index: 1;\
+            pointer-events: none;\
+            background-image: radial-gradient(circle at 10px 10px, #4f46e5 1px, transparent 1px);\
+            background-size: 20px 20px;\
+        \}\
+        \
+        /* Animations */\
+        @keyframes fadeInUp \{\
+            from \{\
+                opacity: 0;\
+                transform: translateY(20px);\
+            \}\
+            to \{\
+                opacity: 1;\
+                transform: translateY(0);\
+            \}\
+        \}\
+        \
+        .fade-in-up \{\
+            animation: fadeInUp 1s ease forwards;\
+        \}\
+        \
+        @keyframes slideInRight \{\
+            from \{\
+                opacity: 0;\
+                transform: translateX(50px);\
+            \}\
+            to \{\
+                opacity: 1;\
+                transform: translateX(0);\
+            \}\
+        \}\
+        \
+        .slide-in-right \{\
+            animation: slideInRight 0.5s ease forwards;\
+        \}\
+        \
+        @keyframes slideInLeft \{\
+            from \{\
+                opacity: 0;\
+                transform: translateX(-50px);\
+            \}\
+            to \{\
+                opacity: 1;\
+                transform: translateX(0);\
+            \}\
+        \}\
+        \
+        .slide-in-left \{\
+            animation: slideInLeft 0.5s ease forwards;\
+        \}\
+        \
+        /* Coming soon badge */\
+        .coming-soon-badge \{\
+            background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);\
+            color: white;\
+            padding: 0.25rem 0.75rem;\
+            border-radius: 9999px;\
+            font-size: 0.75rem;\
+            font-weight: 600;\
+            display: inline-flex;\
+            align-items: center;\
+            justify-content: center;\
+            animation: pulse 2s infinite;\
+        \}\
+        \
+        /* Hover 3D effect */\
+        .hover-3d \{\
+            transition: transform 0.3s ease;\
+            transform-style: preserve-3d;\
+        \}\
+        \
+        .hover-3d:hover \{\
+            transform: perspective(1000px) rotateX(2deg) rotateY(2deg) scale(1.02);\
+        \}\
+        \
+        /* Float animation */\
+        .float-element \{\
+            animation: floatAnimation 6s ease-in-out infinite;\
+        \}\
+        \
+        @keyframes floatAnimation \{\
+            0% \{ transform: translateY(0px); \}\
+            50% \{ transform: translateY(-15px); \}\
+            100% \{ transform: translateY(0px); \}\
+        \}\
+        \
+        /* OS Feature Cards */\
+        .os-feature-card \{\
+            border-radius: 16px;\
+            overflow: hidden;\
+            transition: all 0.4s ease;\
+            height: 100%;\
+            position: relative;\
+            z-index: 1;\
+            background: #ffffff;\
+            border: 1px solid #f1f5f9;\
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);\
+        \}\
+        \
+        .os-feature-card:hover \{\
+            transform: translateY(-8px);\
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.08);\
+            border-color: rgba(79, 70, 229, 0.2);\
+        \}\
+        \
+        .os-feature-icon \{\
+            width: 64px;\
+            height: 64px;\
+            display: flex;\
+            align-items: center;\
+            justify-content: center;\
+            border-radius: 16px;\
+            margin-bottom: 1.5rem;\
+            position: relative;\
+            z-index: 2;\
+        \}\
+        \
+        .os-feature-icon i \{\
+            font-size: 1.75rem;\
+        \}\
+        \
+        .os-feature-pattern \{\
+            position: absolute;\
+            top: 0;\
+            left: 0;\
+            right: 0;\
+            bottom: 0;\
+            opacity: 0.04;\
+            z-index: 0;\
+        \}\
+        \
+        /* CTA Section */\
+        .cta-gradient \{\
+            background: linear-gradient(135deg, #4f46e5 0%, #3b82f6 100%);\
+        \}\
+        \
+        .cta-card \{\
+            border-radius: 24px;\
+            overflow: hidden;\
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);\
+        \}\
+        \
+        .cta-pattern \{\
+            position: absolute;\
+            top: 0;\
+            left: 0;\
+            right: 0;\
+            bottom: 0;\
+            opacity: 0.1;\
+            z-index: 0;\
+            background-image: \
+                radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.3) 0%, transparent 10%),\
+                radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.3) 0%, transparent 10%),\
+                radial-gradient(circle at 40% 70%, rgba(255, 255, 255, 0.3) 0%, transparent 10%),\
+                radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.3) 0%, transparent 10%);\
+        \}\
+        \
+        .cta-btn \{\
+            background: white;\
+            color: #4f46e5;\
+            transition: all 0.3s ease;\
+            border: 2px solid transparent;\
+        \}\
+        \
+        .cta-btn:hover \{\
+            background: rgba(255, 255, 255, 0.9);\
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);\
+            transform: translateY(-2px);\
+        \}\
+        \
+        .cta-btn-outline \{\
+            background: transparent;\
+            color: white;\
+            border: 2px solid white;\
+            transition: all 0.3s ease;\
+        \}\
+        \
+        .cta-btn-outline:hover \{\
+            background: rgba(255, 255, 255, 0.1);\
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);\
+            transform: translateY(-2px);\
+        \}\
+        \
+        /* Flow Chart Styles */\
+        .flow-card \{\
+            background: #ffffff;\
+            border-radius: 16px;\
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);\
+            transition: all 0.4s ease;\
+            position: relative;\
+            z-index: 1;\
+            overflow: hidden;\
+            border: 1px solid rgba(226, 232, 240, 1);\
+        \}\
+        \
+        .flow-card:hover \{\
+            transform: translateY(-5px);\
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);\
+            border-color: rgba(79, 70, 229, 0.3);\
+        \}\
+        \
+        .flow-icon \{\
+            width: 64px;\
+            height: 64px;\
+            border-radius: 16px;\
+            display: flex;\
+            align-items: center;\
+            justify-content: center;\
+            margin-bottom: 1.5rem;\
+            position: relative;\
+            z-index: 2;\
+            background: rgba(79, 70, 229, 0.1);\
+            color: var(--primary);\
+            font-size: 1.75rem;\
+        \}\
+        \
+        .flow-connector \{\
+            position: absolute;\
+            height: 3px;\
+            background: linear-gradient(90deg, var(--primary), var(--secondary));\
+            z-index: 0;\
+        \}\
+        \
+        .flow-connector-vertical \{\
+            position: absolute;\
+            width: 3px;\
+            background: linear-gradient(180deg, var(--primary), var(--secondary));\
+            z-index: 0;\
+        \}\
+        \
+        .flow-arrow \{\
+            position: absolute;\
+            width: 0;\
+            height: 0;\
+            border-style: solid;\
+            z-index: 1;\
+        \}\
+        \
+        .flow-arrow-right \{\
+            border-width: 8px 0 8px 12px;\
+            border-color: transparent transparent transparent var(--secondary);\
+        \}\
+        \
+        .flow-arrow-down \{\
+            border-width: 12px 8px 0 8px;\
+            border-color: var(--secondary) transparent transparent transparent;\
+        \}\
+        \
+        .flow-particle \{\
+            position: absolute;\
+            width: 8px;\
+            height: 8px;\
+            border-radius: 50%;\
+            background: #4f46e5;\
+            box-shadow: 0 0 10px rgba(79, 70, 229, 0.5);\
+            z-index: 2;\
+        \}\
+        \
+        @keyframes flowRight \{\
+            0% \{\
+                left: 0;\
+                opacity: 0;\
+            \}\
+            10% \{\
+                opacity: 1;\
+            \}\
+            90% \{\
+                opacity: 1;\
+            \}\
+            100% \{\
+                left: calc(100% - 8px);\
+                opacity: 0;\
+            \}\
+        \}\
+        \
+        @keyframes flowDown \{\
+            0% \{\
+                top: 0;\
+                opacity: 0;\
+            \}\
+            10% \{\
+                opacity: 1;\
+            \}\
+            90% \{\
+                opacity: 1;\
+            \}\
+            100% \{\
+                top: calc(100% - 8px);\
+                opacity: 0;\
+            \}\
+        \}\
+    </style>\
+</head>\
+<body>\
+    <!-- Navigation -->\
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white bg-opacity-90 backdrop-blur-md border-b border-gray-200 shadow-sm">\
+        <div class="container mx-auto px-4 py-3">\
+            <div class="flex justify-between items-center">\
+                <div class="flex items-center">\
+                    <div class="text-2xl font-bold gradient-text">Streamoid OS</div>\
+                </div>\
+                \
+                <div class="hidden md:flex items-center space-x-8">\
+                    <!-- Agentic AI Studios Dropdown -->\
+                    <div class="dropdown">\
+                        <a href="#studios" class="text-gray-600 hover:text-gray-900 transition-colors flex items-center">\
+                            Agentic AI Studios <i class="fas fa-chevron-down ml-1 text-xs"></i>\
+                        </a>\
+                        <div class="dropdown-content">\
+                            <div class="p-4">\
+                                <h4 class="font-semibold text-gray-900 mb-2">AI Creative Platform</h4>\
+                                <a href="#design-studio" class="block py-2 px-4 text-gray-600 hover:bg-gray-50 hover:text-indigo-600 rounded-md transition-colors">Design Studio</a>\
+                                <a href="#content-studio" class="block py-2 px-4 text-gray-600 hover:bg-gray-50 hover:text-indigo-600 rounded-md transition-colors">Content Studio</a>\
+                                <a href="#catalog-studio" class="block py-2 px-4 text-gray-600 hover:bg-gray-50 hover:text-indigo-600 rounded-md transition-colors">Catalog Studio</a>\
+                                \
+                                <div class="border-t border-gray-100 my-2"></div>\
+                                \
+                                <h4 class="font-semibold text-gray-900 mb-2 flex items-center">\
+                                    AI Commerce Platform \
+                                    <span class="coming-soon-badge ml-2 text-xs">Coming Soon</span>\
+                                </h4>\
+                            </div>\
+                        </div>\
+                    </div>\
+                    \
+                    <a href="#features" class="text-gray-600 hover:text-gray-900 transition-colors">About</a>\
+                    \
+                    <!-- Resources Dropdown -->\
+                    <div class="dropdown">\
+                        <a href="#resources" class="text-gray-600 hover:text-gray-900 transition-colors flex items-center">\
+                            Resources <i class="fas fa-chevron-down ml-1 text-xs"></i>\
+                        </a>\
+                        <div class="dropdown-content">\
+                            <a href="#blogs" class="block py-2 px-4 text-gray-600 hover:bg-gray-50 hover:text-indigo-600 rounded-md transition-colors">Blogs</a>\
+                            <a href="#case-studies" class="block py-2 px-4 text-gray-600 hover:bg-gray-50 hover:text-indigo-600 rounded-md transition-colors">Case Studies</a>\
+                        </div>\
+                    </div>\
+                    \
+                    <a href="#pricing" class="text-gray-600 hover:text-gray-900 transition-colors">Pricing</a>\
+                </div>\
+                \
+                <div class="hidden md:flex items-center space-x-4">\
+                    <button class="btn-secondary px-4 py-2 rounded-lg">Log In</button>\
+                    <button class="btn-primary px-4 py-2 rounded-lg text-white">Get Started</button>\
+                </div>\
+                \
+                <div class="md:hidden">\
+                    <button id="menu-toggle" class="text-gray-600">\
+                        <i class="fas fa-bars text-xl"></i>\
+                    </button>\
+                </div>\
+            </div>\
+        </div>\
+    </nav>\
+    \
+    <!-- Mobile menu -->\
+    <div id="mobile-menu" class="mobile-menu fixed top-0 left-0 h-full w-64 bg-white z-50 p-5 shadow-lg">\
+        <div class="flex justify-between items-center mb-8">\
+            <div class="text-xl font-bold gradient-text">Streamoid OS</div>\
+            <button id="close-menu" class="text-gray-600">\
+                <i class="fas fa-times text-xl"></i>\
+            </button>\
+        </div>\
+        <div class="flex flex-col space-y-4">\
+            <div class="py-2 border-b border-gray-100">\
+                <div class="font-medium text-gray-900 mb-2">Agentic AI Studios</div>\
+                <div class="pl-4 flex flex-col space-y-2">\
+                    <a href="#design-studio" class="text-gray-600 hover:text-gray-900 transition-colors py-1">Design Studio</a>\
+                    <a href="#content-studio" class="text-gray-600 hover:text-gray-900 transition-colors py-1">Content Studio</a>\
+                    <a href="#catalog-studio" class="text-gray-600 hover:text-gray-900 transition-colors py-1">Catalog Studio</a>\
+                    <div class="flex items-center">\
+                        <span class="text-gray-600 py-1">AI Commerce Platform</span>\
+                        <span class="coming-soon-badge ml-2 text-xs">Coming Soon</span>\
+                    </div>\
+                </div>\
+            </div>\
+            \
+            <a href="#features" class="text-gray-600 hover:text-gray-900 transition-colors py-2">About</a>\
+            \
+            <div class="py-2 border-b border-gray-100">\
+                <div class="font-medium text-gray-900 mb-2">Resources</div>\
+                <div class="pl-4 flex flex-col space-y-2">\
+                    <a href="#blogs" class="text-gray-600 hover:text-gray-900 transition-colors py-1">Blogs</a>\
+                    <a href="#case-studies" class="text-gray-600 hover:text-gray-900 transition-colors py-1">Case Studies</a>\
+                </div>\
+            </div>\
+            \
+            <a href="#pricing" class="text-gray-600 hover:text-gray-900 transition-colors py-2">Pricing</a>\
+            \
+            <div class="pt-4 border-t border-gray-200">\
+                <button class="btn-secondary w-full py-2 rounded-lg mb-3">Log In</button>\
+                <button class="btn-primary w-full py-2 rounded-lg text-white">Get Started</button>\
+            </div>\
+        </div>\
+    </div>\
+    <!-- Hero Section -->\
+    <section class="pt-32 pb-20 relative overflow-hidden grid-pattern">\
+        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-indigo-50 to-transparent"></div>\
+        <div class="absolute top-40 right-20 w-72 h-72 bg-indigo-100 rounded-full filter blur-3xl"></div>\
+        <div class="absolute bottom-40 left-20 w-80 h-80 bg-blue-100 rounded-full filter blur-3xl"></div>\
+        \
+        <div class="container mx-auto px-4 relative z-10">\
+            <div class="flex flex-col lg:flex-row items-center">\
+                <div class="lg:w-1/2 mb-10 lg:mb-0">\
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-gray-900">\
+                        The First <span class="gradient-text">AI OS</span> That Runs Your Retail Business End-to-End\
+                    </h1>\
+                    <p class="text-xl text-gray-600 mb-8">\
+                        Streamoid OS replaces your entire e-commerce stack\'97PIMs, DAMs, PLMs, marketplaces, even your team\'97with AI agents built to handle every department. Design, catalog, list, and grow\'97faster than humanly possible.\
+                    </p>\
+                    <div class="flex flex-col sm:flex-row gap-4">\
+                        <button class="btn-primary px-8 py-3 rounded-lg text-lg font-medium text-white hover-3d">\
+                            Get Started Free\
+                        </button>\
+                        <button class="btn-secondary px-8 py-3 rounded-lg text-lg font-medium flex items-center justify-center hover-3d">\
+                            <i class="fas fa-play-circle mr-2"></i> Watch Demo\
+                        </button>\
+                    </div>\
+                    <div class="mt-10 flex items-center">\
+                        <div class="flex -space-x-2">\
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%234f46e5'/%3E%3Ctext x='20' y='25' font-family='Arial' font-size='14' fill='white' text-anchor='middle'%3EJD%3C/text%3E%3C/svg%3E" class="w-10 h-10 rounded-full border-2 border-white" alt="User">\
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%233b82f6'/%3E%3Ctext x='20' y='25' font-family='Arial' font-size='14' fill='white' text-anchor='middle'%3EAK%3C/text%3E%3C/svg%3E" class="w-10 h-10 rounded-full border-2 border-white" alt="User">\
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%236366f1'/%3E%3Ctext x='20' y='25' font-family='Arial' font-size='14' fill='white' text-anchor='middle'%3ETS%3C/text%3E%3C/svg%3E" class="w-10 h-10 rounded-full border-2 border-white" alt="User">\
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%230ea5e9'/%3E%3Ctext x='20' y='25' font-family='Arial' font-size='14' fill='white' text-anchor='middle'%3EBL%3C/text%3E%3C/svg%3E" class="w-10 h-10 rounded-full border-2 border-white" alt="User">\
+                        </div>\
+                        <div class="ml-4">\
+                            <div class="flex items-center">\
+                                <div class="flex">\
+                                    <i class="fas fa-star text-yellow-400"></i>\
+                                    <i class="fas fa-star text-yellow-400"></i>\
+                                    <i class="fas fa-star text-yellow-400"></i>\
+                                    <i class="fas fa-star text-yellow-400"></i>\
+                                    <i class="fas fa-star text-yellow-400"></i>\
+                                </div>\
+                                <span class="ml-2 text-gray-600">5.0</span>\
+                            </div>\
+                            <p class="text-gray-500 text-sm">Trusted by 500+ retailers worldwide</p>\
+                        </div>\
+                    </div>\
+                </div>\
+                <div class="lg:w-1/2 relative">\
+                    <div class="relative z-10 floating">\
+                        <svg class="w-full h-auto" viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">\
+                            <defs>\
+                                <linearGradient id="dashboardGrad" x1="0%" y1="0%" x2="100%" y2="100%">\
+                                    <stop offset="0%" stop-color="#4f46e5" />\
+                                    <stop offset="100%" stop-color="#3b82f6" />\
+                                </linearGradient>\
+                                <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">\
+                                    <feGaussianBlur stdDeviation="5" result="blur" />\
+                                    <feComposite in="SourceGraphic" in2="blur" operator="over" />\
+                                </filter>\
+                            </defs>\
+                            \
+                            <rect x="10" y="10" width="480" height="380" rx="20" fill="#ffffff" stroke="url(#dashboardGrad)" stroke-width="2" filter="url(#glow)" />\
+                            <!-- Sidebar -->\
+                            <rect x="20" y="20" width="100" height="360" rx="10" fill="#f8fafc" />\
+                            <circle cx="70" cy="50" r="20" fill="#4f46e5">\
+                                <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite" />\
+                            </circle>\
+                            <rect x="40" y="90" width="60" height="8" rx="4" fill="#6366f1" />\
+                            <rect x="40" y="110" width="60" height="8" rx="4" fill="#94a3b8" />\
+                            <rect x="40" y="130" width="60" height="8" rx="4" fill="#94a3b8" />\
+                            <rect x="40" y="150" width="60" height="8" rx="4" fill="#94a3b8" />\
+                            <rect x="40" y="170" width="60" height="8" rx="4" fill="#94a3b8" />\
+                            <rect x="40" y="190" width="60" height="8" rx="4" fill="#94a3b8" />\
+                            \
+                            <!-- Header -->\
+                            <rect x="130" y="20" width="350" height="60" rx="10" fill="#f8fafc" />\
+                            <rect x="150" y="40" width="120" height="20" rx="5" fill="#f1f5f9" />\
+                            <circle cx="450" cy="50" r="15" fill="#4f46e5">\
+                                <animate attributeName="r" values="15;17;15" dur="2s" repeatCount="indefinite" />\
+                            </circle>\
+                            \
+                            <!-- Main content - AI Agent Dashboard -->\
+                            <rect x="130" y="90" width="170" height="100" rx="10" fill="#f1f5f9" />\
+                            <rect x="140" y="100" width="80" height="10" rx="4" fill="#1e293b" />\
+                            <rect x="140" y="120" width="120" height="8" rx="4" fill="#64748b" />\
+                            <circle cx="160" cy="150" r="15" fill="#4f46e5" opacity="0.7">\
+                                <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite" />\
+                            </circle>\
+                            <text x="160" y="154" font-family="Arial" font-size="10" fill="white" text-anchor="middle">AI</text>\
+                            <rect x="185" y="145" width="100" height="8" rx="4" fill="#64748b" />\
+                            <rect x="185" y="160" width="60" height="8" rx="4" fill="#3b82f6" />\
+                            \
+                            <rect x="310" y="90" width="170" height="100" rx="10" fill="#f1f5f9" />\
+                            <rect x="320" y="100" width="80" height="10" rx="4" fill="#1e293b" />\
+                            <rect x="320" y="120" width="120" height="8" rx="4" fill="#64748b" />\
+                            <circle cx="340" cy="150" r="15" fill="#3b82f6" opacity="0.7">\
+                                <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite" offset="1s" />\
+                            </circle>\
+                            <text x="340" y="154" font-family="Arial" font-size="10" fill="white" text-anchor="middle">AI</text>\
+                            <rect x="365" y="145" width="100" height="8" rx="4" fill="#64748b" />\
+                            <rect x="365" y="160" width="60" height="8" rx="4" fill="#6366f1" />\
+                            \
+                            <!-- AI Studios Dashboard -->\
+                            <rect x="130" y="200" width="350" height="170" rx="10" fill="#f1f5f9" />\
+                            <rect x="150" y="220" width="120" height="10" rx="5" fill="#1e293b" />\
+                            <text x="150" y="245" font-family="Arial" font-size="10" fill="#64748b">AI Studios Activity</text>\
+                            \
+                            <!-- Studio Cards -->\
+                            <rect x="150" y="260" width="70" height="90" rx="5" fill="#ffffff" stroke="#4f46e5" stroke-width="1" />\
+                            <circle cx="185" cy="280" r="10" fill="#4f46e5" opacity="0.7">\
+                                <animate attributeName="r" values="10;12;10" dur="2s" repeatCount="indefinite" />\
+                            </circle>\
+                            <text x="185" y="283" font-family="Arial" font-size="6" fill="white" text-anchor="middle">D</text>\
+                            <rect x="165" y="300" width="40" height="5" rx="2" fill="#1e293b" />\
+                            <rect x="165" y="310" width="40" height="4" rx="2" fill="#64748b" />\
+                            <rect x="165" y="320" width="40" height="4" rx="2" fill="#64748b" />\
+                            <rect x="165" y="330" width="20" height="4" rx="2" fill="#3b82f6" />\
+                            \
+                            <rect x="230" y="260" width="70" height="90" rx="5" fill="#ffffff" stroke="#3b82f6" stroke-width="1" />\
+                            <circle cx="265" cy="280" r="10" fill="#3b82f6" opacity="0.7">\
+                                <animate attributeName="r" values="10;12;10" dur="2s" repeatCount="indefinite" offset="0.5s" />\
+                            </circle>\
+                            <text x="265" y="283" font-family="Arial" font-size="6" fill="white" text-anchor="middle">C</text>\
+                            <rect x="245" y="300" width="40" height="5" rx="2" fill="#1e293b" />\
+                            <rect x="245" y="310" width="40" height="4" rx="2" fill="#64748b" />\
+                            <rect x="245" y="320" width="40" height="4" rx="2" fill="#64748b" />\
+                            <rect x="245" y="330" width="20" height="4" rx="2" fill="#4f46e5" />\
+                            \
+                            <rect x="310" y="260" width="70" height="90" rx="5" fill="#ffffff" stroke="#6366f1" stroke-width="1" />\
+                            <circle cx="345" cy="280" r="10" fill="#6366f1" opacity="0.7">\
+                                <animate attributeName="r" values="10;12;10" dur="2s" repeatCount="indefinite" offset="1s" />\
+                            </circle>\
+                            <text x="345" y="283" font-family="Arial" font-size="6" fill="white" text-anchor="middle">C</text>\
+                            <rect x="325" y="300" width="40" height="5" rx="2" fill="#1e293b" />\
+                            <rect x="325" y="310" width="40" height="4" rx="2" fill="#64748b" />\
+                            <rect x="325" y="320" width="40" height="4" rx="2" fill="#64748b" />\
+                            <rect x="325" y="330" width="20" height="4" rx="2" fill="#0ea5e9" />\
+                            \
+                            <rect x="390" y="260" width="70" height="90" rx="5" fill="#ffffff" stroke="#0ea5e9" stroke-width="1" />\
+                            <circle cx="425" cy="280" r="10" fill="#0ea5e9" opacity="0.7">\
+                                <animate attributeName="r" values="10;12;10" dur="2s" repeatCount="indefinite" offset="1.5s" />\
+                            </circle>\
+                            <text x="425" y="283" font-family="Arial" font-size="6" fill="white" text-anchor="middle">A</text>\
+                            <rect x="405" y="300" width="40" height="5" rx="2" fill="#1e293b" />\
+                            <rect x="405" y="310" width="40" height="4" rx="2" fill="#64748b" />\
+                            <rect x="405" y="320" width="40" height="4" rx="2" fill="#64748b" />\
+                            <rect x="405" y="330" width="20" height="4" rx="2" fill="#6366f1" />\
+                        </svg>\
+                    </div>\
+                    \
+                    <!-- Floating elements -->\
+                    <div class="absolute -top-10 -right-10 p-4 bg-white rounded-lg shadow-lg border border-indigo-100 flex items-center gap-3 float-element z-20">\
+                        <div class="w-10 h-10 rounded-full bg-indigo-500 flex items-center justify-center">\
+                            <i class="fas fa-robot text-white"></i>\
+                        </div>\
+                        <div>\
+                            <p class="text-sm font-medium text-gray-900">AI Agent</p>\
+                            <p class="text-xs text-gray-500">Design Studio</p>\
+                        </div>\
+                    </div>\
+                    \
+                    <div class="absolute -bottom-5 -left-5 p-4 bg-white rounded-lg shadow-lg border border-blue-100 flex items-center gap-3 float-element z-20" style="animation-delay: 1s;">\
+                        <div class="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center">\
+                            <i class="fas fa-chart-line text-white"></i>\
+                        </div>\
+                        <div>\
+                            <p class="text-sm font-medium text-gray-900">AI Agent</p>\
+                            <p class="text-xs text-gray-500">Catalog Studio</p>\
+                        </div>\
+                    </div>\
+                    \
+                    <div class="absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2 p-4 bg-white rounded-lg shadow-lg border border-indigo-100 flex items-center gap-3 float-element z-20" style="animation-delay: 1.5s;">\
+                        <div class="w-10 h-10 rounded-full bg-indigo-500 flex items-center justify-center">\
+                            <i class="fas fa-magic text-white"></i>\
+                        </div>\
+                        <div>\
+                            <p class="text-sm font-medium text-gray-900">AI Agent</p>\
+                            <p class="text-xs text-gray-500">Content Studio</p>\
+                        </div>\
+                    </div>\
+                </div>\
+            </div>\
+<!-- Brands -->\
+<div class="mt-20 text-center">\
+    <p class="text-gray-500 mb-6">TRUSTED BY LEADING RETAIL BRANDS</p>\
+    <div class="flex flex-wrap justify-center gap-8 md:gap-16">\
+        <div class="text-gray-400 hover:text-gray-600 transition-colors">\
+            <svg class="h-8" viewBox="0 0 100 30" fill="currentColor">\
+                <path d="M20,10 L30,10 L30,20 L20,20 Z M10,10 L20,10 L20,20 L10,20 Z M0,10 L10,10 L10,20 L0,20 Z M30,0 L40,0 L40,10 L30,10 Z M20,0 L30,0 L30,10 L20,10 Z M10,0 L20,0 L20,10 L10,10 Z M30,20 L40,20 L40,30 L30,30 Z M20,20 L30,20 L30,30 L20,30 Z"></path>\
+            </svg>\
+            <span class="font-medium">Myntra</span>\
+        </div>\
+        <div class="text-gray-400 hover:text-gray-600 transition-colors">\
+            <svg class="h-8" viewBox="0 0 100 30" fill="currentColor">\
+                <path d="M10,15 C10,9.5 14.5,5 20,5 C25.5,5 30,9.5 30,15 C30,20.5 25.5,25 20,25 C14.5,25 10,20.5 10,15 Z M35,5 L45,5 L45,25 L35,25 Z M50,5 L70,5 L70,10 L55,10 L55,13 L65,13 L65,18 L55,18 L55,20 L70,20 L70,25 L50,25 Z"></path>\
+            </svg>\
+            <span class="font-medium">Pantaloons</span>\
+        </div>\
+        <div class="text-gray-400 hover:text-gray-600 transition-colors">\
+            <svg class="h-8" viewBox="0 0 100 30" fill="currentColor">\
+                <path d="M10,5 L25,5 L40,25 L40,5 L50,5 L50,25 L35,25 L20,5 L20,25 L10,25 Z M55,5 L90,5 L90,10 L65,10 L65,13 L85,13 L85,18 L65,18 L65,20 L90,20 L90,25 L55,25 Z"></path>\
+            </svg>\
+            <span class="font-medium">Fabindia</span>\
+        </div>\
+        <div class="text-gray-400 hover:text-gray-600 transition-colors">\
+            <svg class="h-8" viewBox="0 0 100 30" fill="currentColor">\
+                <path d="M20,5 C31,5 40,12 40,15 C40,18 31,25 20,25 C9,25 0,18 0,15 C0,12 9,5 20,5 Z M20,10 C17.2,10 15,12.2 15,15 C15,17.8 17.2,20 20,20 C22.8,20 25,17.8 25,15 C25,12.2 22.8,10 20,10 Z M50,5 L60,5 L75,15 L60,25 L50,25 L65,15 L50,5 Z M80,5 L90,5 L90,25 L80,25 Z"></path>\
+            </svg>\
+            <span class="font-medium">Biba</span>\
+        </div>\
+        <div class="text-gray-400 hover:text-gray-600 transition-colors">\
+            <svg class="h-8" viewBox="0 0 100 30" fill="currentColor">\
+                <path d="M10,5 H90 V25 H10 Z"></path>\
+            </svg>\
+            <span class="font-medium">Lifestyle</span>\
+        </div>\
+        <div class="text-gray-400 hover:text-gray-600 transition-colors">\
+            <svg class="h-8" viewBox="0 0 100 30" fill="currentColor">\
+                <path d="M15,5 L85,5 L85,25 L15,25 Z"></path>\
+            </svg>\
+            <span class="font-medium">Westside</span>\
+        </div>\
+    </div>\
+</div>\
+            \
+    <!-- Studios Section - Auto-scrolling Carousel -->\
+    <section id="studios" class="py-20 relative section-alt overflow-hidden">\
+        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-indigo-50 to-transparent opacity-50"></div>\
+        <div class="absolute top-40 right-20 w-72 h-72 bg-indigo-100 rounded-full filter blur-3xl opacity-30"></div>\
+        <div class="absolute bottom-40 left-20 w-80 h-80 bg-emerald-100 rounded-full filter blur-3xl opacity-30"></div>\
+        \
+        <div class="container mx-auto px-4 relative z-10">\
+            <div class="text-center max-w-3xl mx-auto mb-16">\
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Your Co-Working Agents - Powered by AI</h2>\
+                <p class="text-xl text-gray-600">Each studio is like a full department, run by intelligent agents. You focus on strategy. Let your AI team handle the rest.</p>\
+            </div>\
+            \
+            <!-- Auto-scrolling Studios Carousel -->\
+            <div class="studios-carousel relative">\
+                <div class="studios-carousel-inner">\
+                    <!-- Design Studio -->\
+                    <div class="studio-slide active" data-index="0">\
+                        <div class="bg-gradient-to-br from-indigo-50 to-white rounded-3xl shadow-xl overflow-hidden">\
+                            <div class="flex flex-col lg:flex-row items-center">\
+                                <div class="lg:w-1/2 p-8 lg:p-12">\
+                                    <div class="flex items-center mb-6">\
+                                        <div class="w-16 h-16 rounded-full bg-indigo-500 flex items-center justify-center text-white">\
+                                            <i class="fas fa-pencil-ruler text-2xl"></i>\
+                                        </div>\
+                                        <h3 class="text-3xl font-bold ml-5 text-gray-900">Design Agent</h3>\
+                                    </div>\
+                                    \
+                                    <p class="text-xl text-gray-600 mb-8">The AI design team that takes your ideas and builds production-ready specs in minutes, not days.</p>\
+                                    \
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8">\
+                                        <div class="flex items-center p-3 bg-indigo-50 rounded-lg">\
+                                            <i class="fas fa-check-circle text-indigo-500 mr-3 text-xl"></i>\
+                                            <span class="text-gray-700 font-medium">Concept to Production</span>\
+                                        </div>\
+                                        <div class="flex items-center p-3 bg-indigo-50 rounded-lg">\
+                                            <i class="fas fa-check-circle text-indigo-500 mr-3 text-xl"></i>\
+                                            <span class="text-gray-700 font-medium">Technical Specifications</span>\
+                                        </div>\
+                                        <div class="flex items-center p-3 bg-indigo-50 rounded-lg">\
+                                            <i class="fas fa-check-circle text-indigo-500 mr-3 text-xl"></i>\
+                                            <span class="text-gray-700 font-medium">Brand Consistency</span>\
+                                        </div>\
+                                        <div class="flex items-center p-3 bg-indigo-50 rounded-lg">\
+                                            <i class="fas fa-check-circle text-indigo-500 mr-3 text-xl"></i>\
+                                            <span class="text-gray-700 font-medium">Trend Analysis</span>\
+                                        </div>\
+                                    </div>\
+                                    \
+                                    <button class="btn-primary px-8 py-3 rounded-lg text-lg font-medium hover-3d">\
+                                        <span class="flex items-center">\
+                                            Explore Design Agent\
+                                            <i class="fas fa-arrow-right ml-2"></i>\
+                                        </span>\
+                                    </button>\
+                                </div>\
+                                \
+                                <div class="lg:w-1/2 p-8 lg:p-12 relative">\
+                                    <svg class="w-full h-auto" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">\
+                                        <!-- Design Tool Interface -->\
+                                        <rect x="20" y="20" width="360" height="260" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1" class="shadow-lg" />\
+                                        \
+                                        <!-- Toolbar -->\
+                                        <rect x="20" y="20" width="360" height="40" rx="8" fill="#f8fafc" />\
+                                        <circle cx="40" cy="40" r="6" fill="#4f46e5" />\
+                                        <circle cx="60" cy="40" r="6" fill="#10b981" />\
+                                        <circle cx="80" cy="40" r="6" fill="#f43f5e" />\
+                                        <rect x="100" y="34" width="60" height="12" rx="3" fill="#e2e8f0" />\
+                                        \
+                                        <!-- Sidebar -->\
+                                        <rect x="20" y="60" width="80" height="220" rx="0" fill="#f8fafc" />\
+                                        <rect x="30" y="80" width="60" height="8" rx="2" fill="#e2e8f0" />\
+                                        <rect x="30" y="100" width="60" height="8" rx="2" fill="#e2e8f0" />\
+                                        <rect x="30" y="120" width="60" height="8" rx="2" fill="#e2e8f0" />\
+                                        <rect x="30" y="140" width="60" height="8" rx="2" fill="#e2e8f0" />\
+                                        <rect x="30" y="160" width="60" height="8" rx="2" fill="#e2e8f0" />\
+                                        \
+                                        <!-- Design Canvas -->\
+                                        <rect x="110" y="70" width="260" height="200" rx="4" fill="#ffffff" stroke="#e2e8f0" stroke-width="1" />\
+                                        \
+                                        <!-- Product Design -->\
+                                        <rect x="140" y="90" width="200" height="160" rx="4" fill="#f8fafc" />\
+                                        \
+                                        <!-- Product Outline -->\
+                                        <path d="M190,110 L290,110 L290,230 L190,230 Z" fill="none" stroke="#4f46e5" stroke-width="2" stroke-dasharray="5,5" />\
+                                        \
+                                        <!-- Measurement Lines -->\
+                                        <line x1="190" y1="100" x2="190" y2="240" stroke="#4f46e5" stroke-width="1" />\
+                                        <line x1="290" y1="100" x2="290" y2="240" stroke="#4f46e5" stroke-width="1" />\
+                                        <line x1="180" y1="110" x2="300" y2="110" stroke="#4f46e5" stroke-width="1" />\
+                                        <line x1="180" y1="230" x2="300" y2="230" stroke="#4f46e5" stroke-width="1" />\
+                                        \
+                                        <!-- Dimensions -->\
+                                        <text x="240" y="105" font-family="Arial" font-size="8" fill="#4f46e5" text-anchor="middle">100 px</text>\
+                                        <text x="185" y="170" font-family="Arial" font-size="8" fill="#4f46e5" text-anchor="middle" transform="rotate(-90, 185, 170)">120 px</text>\
+                                        \
+                                        <!-- AI Design Elements -->\
+                                        <circle cx="240" cy="170" r="30" fill="none" stroke="#4f46e5" stroke-width="2" />\
+                                        <rect x="220" y="150" width="40" height="40" rx="4" fill="none" stroke="#4f46e5" stroke-width="2" />\
+                                        <path d="M220,150 L260,190 M220,190 L260,150" stroke="#4f46e5" stroke-width="2" />\
+                                        \
+                                        <!-- AI Badge -->\
+                                        <rect x="310" y="70" width="50" height="20" rx="10" fill="#4f46e5" />\
+                                        <text x="335" y="84" font-family="Arial" font-size="10" fill="white" text-anchor="middle">AI</text>\
+                                        \
+                                        <!-- Animation elements -->\
+                                        <circle cx="240" cy="170" r="35" fill="none" stroke="#4f46e5" stroke-width="1" opacity="0.5">\
+                                            <animate attributeName="r" from="35" to="45" dur="2s" repeatCount="indefinite" />\
+                                            <animate attributeName="opacity" from="0.5" to="0" dur="2s" repeatCount="indefinite" />\
+                                        </circle>\
+                                    </svg>\
+                                    \
+                                    <!-- Floating AI Element -->\
+                                    <div class="absolute top-5 right-5 p-3 bg-white rounded-lg shadow-lg border border-indigo-100 flex items-center gap-2 float-element">\
+                                        <div class="w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center">\
+                                            <i class="fas fa-robot text-white text-sm"></i>\
+                                        </div>\
+                                        <div>\
+                                            <p class="text-xs font-medium text-gray-900">AI Designer</p>\
+                                            <p class="text-xs text-indigo-500">Working...</p>\
+                                        </div>\
+                                    </div>\
+                                </div>\
+                            </div>\
+                        </div>\
+                    </div>\
+                    \
+                    <!-- Content Studio -->\
+                    <div class="studio-slide" data-index="1">\
+                        <div class="bg-gradient-to-br from-emerald-50 to-white rounded-3xl shadow-xl overflow-hidden">\
+                            <div class="flex flex-col lg:flex-row items-center">\
+                                <div class="lg:w-1/2 p-8 lg:p-12">\
+                                    <div class="flex items-center mb-6">\
+                                        <div class="w-16 h-16 rounded-full bg-emerald-500 flex items-center justify-center text-white">\
+                                            <i class="fas fa-images text-2xl"></i>\
+                                        </div>\
+                                        <h3 class="text-3xl font-bold ml-5 text-gray-900">Content Studio</h3>\
+                                    </div>\
+                                    \
+                                    <p class="text-xl text-gray-600 mb-8">The AI creative team that generates campaign-ready product visuals and marketing assets at scale.</p>\
+                                    \
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8">\
+                                        <div class="flex items-center p-3 bg-emerald-50 rounded-lg">\
+                                            <i class="fas fa-check-circle text-emerald-500 mr-3 text-xl"></i>\
+                                            <span class="text-gray-700 font-medium">Product Photography</span>\
+                                        </div>\
+                                        <div class="flex items-center p-3 bg-emerald-50 rounded-lg">\
+                                            <i class="fas fa-check-circle text-emerald-500 mr-3 text-xl"></i>\
+                                            <span class="text-gray-700 font-medium">Marketing Visuals</span>\
+                                        </div>\
+                                        <div class="flex items-center p-3 bg-emerald-50 rounded-lg">\
+                                            <i class="fas fa-check-circle text-emerald-500 mr-3 text-xl"></i>\
+                                            <span class="text-gray-700 font-medium">Social Media Content</span>\
+                                        </div>\
+                                        <div class="flex items-center p-3 bg-emerald-50 rounded-lg">\
+                                            <i class="fas fa-check-circle text-emerald-500 mr-3 text-xl"></i>\
+                                            <span class="text-gray-700 font-medium">Ad Creatives</span>\
+                                        </div>\
+                                    </div>\
+                                    \
+                                    <button class="btn-primary px-8 py-3 rounded-lg text-lg font-medium hover-3d">\
+                                        <span class="flex items-center">\
+                                            Explore Content Studio\
+                                            <i class="fas fa-arrow-right ml-2"></i>\
+                                        </span>\
+                                    </button>\
+                                </div>\
+                                \
+                                <div class="lg:w-1/2 p-8 lg:p-12 relative">\
+                                    <svg class="w-full h-auto" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">\
+                                        <!-- Content Studio Interface -->\
+                                        <rect x="20" y="20" width="360" height="260" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1" class="shadow-lg" />\
+                                        \
+                                        <!-- Toolbar -->\
+                                        <rect x="20" y="20" width="360" height="40" rx="8" fill="#f8fafc" />\
+                                        <circle cx="40" cy="40" r="6" fill="#10b981" />\
+                                        <circle cx="60" cy="40" r="6" fill="#4f46e5" />\
+                                        <circle cx="80" cy="40" r="6" fill="#f43f5e" />\
+                                        <rect x="100" y="34" width="60" height="12" rx="3" fill="#e2e8f0" />\
+                                        \
+                                        <!-- Content Grid -->\
+                                        <rect x="30" y="70" width="100" height="100" rx="4" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" />\
+                                        <rect x="140" y="70" width="100" height="100" rx="4" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" />\
+                                        <rect x="250" y="70" width="100" height="100" rx="4" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" />\
+                                        <rect x="30" y="180" width="100" height="90" rx="4" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" />\
+                                        <rect x="140" y="180" width="210" height="90" rx="4" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" />\
+                                        \
+                                        <!-- Product Images -->\
+                                        <rect x="40" y="80" width="80" height="80" rx="4" fill="#10b981" opacity="0.2" />\
+                                        <rect x="150" y="80" width="80" height="80" rx="4" fill="#10b981" opacity="0.2" />\
+                                        <rect x="260" y="80" width="80" height="80" rx="4" fill="#10b981" opacity="0.2" />\
+                                        <rect x="40" y="190" width="80" height="70" rx="4" fill="#10b981" opacity="0.2" />\
+                                        \
+                                        <!-- Marketing Banner -->\
+                                        <rect x="150" y="190" width="190" height="70" rx="4" fill="#10b981" opacity="0.2" />\
+                                        <text x="245" y="225" font-family="Arial" font-size="12" fill="#10b981" text-anchor="middle">Campaign Creative</text>\
+                                        \
+                                        <!-- AI Badge -->\
+                                        <rect x="310" y="30" width="50" height="20" rx="10" fill="#10b981" />\
+                                        <text x="335" y="44" font-family="Arial" font-size="10" fill="white" text-anchor="middle">AI</text>\
+                                        \
+                                        <!-- Animation elements -->\
+                                        <rect x="40" y="80" width="80" height="80" rx="4" fill="none" stroke="#10b981" stroke-width="1" opacity="0.5">\
+                                            <animate attributeName="stroke-width" values="1;3;1" dur="2s" repeatCount="indefinite" />\
+                                        </rect>\
+                                        <rect x="150" y="80" width="80" height="80" rx="4" fill="none" stroke="#10b981" stroke-width="1" opacity="0.5">\
+                                            <animate attributeName="stroke-width" values="1;3;1" dur="2s" repeatCount="indefinite" begin="0.5s" />\
+                                        </rect>\
+                                        <rect x="260" y="80" width="80" height="80" rx="4" fill="none" stroke="#10b981" stroke-width="1" opacity="0.5">\
+                                            <animate attributeName="stroke-width" values="1;3;1" dur="2s" repeatCount="indefinite" begin="1s" />\
+                                        </rect>\
+                                    </svg>\
+                                    \
+                                    <!-- Floating AI Element -->\
+                                    <div class="absolute top-5 right-5 p-3 bg-white rounded-lg shadow-lg border border-emerald-100 flex items-center gap-2 float-element">\
+                                        <div class="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center">\
+                                            <i class="fas fa-camera text-white text-sm"></i>\
+                                        </div>\
+                                        <div>\
+                                            <p class="text-xs font-medium text-gray-900">AI Creator</p>\
+                                            <p class="text-xs text-emerald-500">Generating...</p>\
+                                        </div>\
+                                    </div>\
+                                </div>\
+                            </div>\
+                        </div>\
+                    </div>\
+                    \
+                    <!-- Catalog Studio -->\
+                    <div class="studio-slide" data-index="2">\
+                        <div class="bg-gradient-to-br from-rose-50 to-white rounded-3xl shadow-xl overflow-hidden">\
+                            <div class="flex flex-col lg:flex-row items-center">\
+                                <div class="lg:w-1/2 p-8 lg:p-12">\
+                                    <div class="flex items-center mb-6">\
+                                        <div class="w-16 h-16 rounded-full bg-rose-500 flex items-center justify-center text-white">\
+                                            <i class="fas fa-tags text-2xl"></i>\
+                                        </div>\
+                                        <h3 class="text-3xl font-bold ml-5 text-gray-900">Catalog Studio</h3>\
+                                    </div>\
+                                    \
+                                    <p class="text-xl text-gray-600 mb-8">The AI e-commerce team that tags, formats, and lists your products on every channel\'97instantly.</p>\
+                                    \
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8">\
+                                        <div class="flex items-center p-3 bg-rose-50 rounded-lg">\
+                                            <i class="fas fa-check-circle text-rose-500 mr-3 text-xl"></i>\
+                                            <span class="text-gray-700 font-medium">Auto-Tagging</span>\
+                                        </div>\
+                                        <div class="flex items-center p-3 bg-rose-50 rounded-lg">\
+                                            <i class="fas fa-check-circle text-rose-500 mr-3 text-xl"></i>\
+                                            <span class="text-gray-700 font-medium">Multi-Channel Listing</span>\
+                                        </div>\
+                                        <div class="flex items-center p-3 bg-rose-50 rounded-lg">\
+                                            <i class="fas fa-check-circle text-rose-500 mr-3 text-xl"></i>\
+                                            <span class="text-gray-700 font-medium">SEO Optimization</span>\
+                                        </div>\
+                                        <div class="flex items-center p-3 bg-rose-50 rounded-lg">\
+                                            <i class="fas fa-check-circle text-rose-500 mr-3 text-xl"></i>\
+                                            <span class="text-gray-700 font-medium">Product Descriptions</span>\
+                                        </div>\
+                                    </div>\
+                                    \
+                                    <button class="btn-primary px-8 py-3 rounded-lg text-lg font-medium hover-3d">\
+                                        <span class="flex items-center">\
+                                            Explore Catalog Studio\
+                                            <i class="fas fa-arrow-right ml-2"></i>\
+                                        </span>\
+                                    </button>\
+                                </div>\
+                                \
+                                <div class="lg:w-1/2 p-8 lg:p-12 relative">\
+                                    <svg class="w-full h-auto" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">\
+                                        <!-- Catalog Studio Interface -->\
+                                        <rect x="20" y="20" width="360" height="260" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1" class="shadow-lg" />\
+                                        \
+                                        <!-- Toolbar -->\
+                                        <rect x="20" y="20" width="360" height="40" rx="8" fill="#f8fafc" />\
+                                        <circle cx="40" cy="40" r="6" fill="#f43f5e" />\
+                                        <circle cx="60" cy="40" r="6" fill="#4f46e5" />\
+                                        <circle cx="80" cy="40" r="6" fill="#10b981" />\
+                                        <rect x="100" y="34" width="60" height="12" rx="3" fill="#e2e8f0" />\
+                                        \
+                                        <!-- Catalog Table -->\
+                                        <rect x="30" y="70" width="340" height="200" rx="4" fill="#ffffff" stroke="#e2e8f0" stroke-width="1" />\
+                                        \
+                                        <!-- Table Header -->\
+                                        <rect x="30" y="70" width="340" height="30" rx="4" fill="#f8fafc" />\
+                                        <text x="50" y="90" font-family="Arial" font-size="10" fill="#64748b">ID</text>\
+                                        <text x="100" y="90" font-family="Arial" font-size="10" fill="#64748b">Product</text>\
+                                        <text x="200" y="90" font-family="Arial" font-size="10" fill="#64748b">Category</text>\
+                                        <text x="280" y="90" font-family="Arial" font-size="10" fill="#64748b">Tags</text>\
+                                        <text x="350" y="90" font-family="Arial" font-size="10" fill="#64748b">Status</text>\
+                                        \
+                                        <!-- Table Rows -->\
+                                        <rect x="30" y="100" width="340" height="1" fill="#e2e8f0" />\
+                                        \
+                                        <!-- Row 1 -->\
+                                        <text x="50" y="120" font-family="Arial" font-size="10" fill="#1e293b">#001</text>\
+                                        <text x="100" y="120" font-family="Arial" font-size="10" fill="#1e293b">Summer Dress</text>\
+                                        <text x="200" y="120" font-family="Arial" font-size="10" fill="#1e293b">Apparel</text>\
+                                        <rect x="280" y="112" width="30" height="15" rx="7.5" fill="#4f46e5" opacity="0.2" />\
+                                        <text x="295" y="122" font-family="Arial" font-size="8" fill="#4f46e5">New</text>\
+                                        <circle cx="350" cy="120" r="6" fill="#10b981" />\
+                                        <rect x="30" y="130" width="340" height="1" fill="#e2e8f0" />\
+                                        \
+                                        <!-- Row 2 -->\
+                                        <text x="50" y="150" font-family="Arial" font-size="10" fill="#1e293b">#002</text>\
+                                        <text x="100" y="150" font-family="Arial" font-size="10" fill="#1e293b">Leather Bag</text>\
+                                        <text x="200" y="150" font-family="Arial" font-size="10" fill="#1e293b">Accessories</text>\
+                                        <rect x="280" y="142" width="40" height="15" rx="7.5" fill="#f43f5e" opacity="0.2" />\
+                                        <text x="300" y="152" font-family="Arial" font-size="8" fill="#f43f5e">Featured</text>\
+                                        <circle cx="350" cy="150" r="6" fill="#10b981" />\
+                                        <rect x="30" y="160" width="340" height="1" fill="#e2e8f0" />\
+                                        \
+                                        <!-- Row 3 -->\
+                                        <text x="50" y="180" font-family="Arial" font-size="10" fill="#1e293b">#003</text>\
+                                        <text x="100" y="180" font-family="Arial" font-size="10" fill="#1e293b">Sneakers</text>\
+                                        <text x="200" y="180" font-family="Arial" font-size="10" fill="#1e293b">Footwear</text>\
+                                        <rect x="280" y="172" width="35" height="15" rx="7.5" fill="#10b981" opacity="0.2" />\
+                                        <text x="297" y="182" font-family="Arial" font-size="8" fill="#10b981">Sale</text>\
+                                        <circle cx="350" cy="180" r="6" fill="#f43f5e" />\
+                                        <rect x="30" y="190" width="340" height="1" fill="#e2e8f0" />\
+                                        \
+                                        <!-- Row 4 -->\
+                                        <text x="50" y="210" font-family="Arial" font-size="10" fill="#1e293b">#004</text>\
+                                        <text x="100" y="210" font-family="Arial" font-size="10" fill="#1e293b">Watch</text>\
+                                        <text x="200" y="210" font-family="Arial" font-size="10" fill="#1e293b">Accessories</text>\
+                                        <rect x="280" y="202" width="50" height="15" rx="7.5" fill="#4f46e5" opacity="0.2" />\
+                                        <text x="305" y="212" font-family="Arial" font-size="8" fill="#4f46e5">Premium</text>\
+                                        <circle cx="350" cy="210" r="6" fill="#10b981" />\
+                                        <rect x="30" y="220" width="340" height="1" fill="#e2e8f0" />\
+                                        \
+                                        <!-- Row 5 -->\
+                                        <text x="50" y="240" font-family="Arial" font-size="10" fill="#1e293b">#005</text>\
+                                        <text x="100" y="240" font-family="Arial" font-size="10" fill="#1e293b">Sunglasses</text>\
+                                        <text x="200" y="240" font-family="Arial" font-size="10" fill="#1e293b">Accessories</text>\
+                                        <rect x="280" y="232" width="45" height="15" rx="7.5" fill="#10b981" opacity="0.2" />\
+                                        <text x="302" y="242" font-family="Arial" font-size="8" fill="#10b981">Trending</text>\
+                                        <circle cx="350" cy="240" r="6" fill="#10b981" />\
+                                        \
+                                        <!-- AI Badge -->\
+                                        <rect x="310" y="30" width="50" height="20" rx="10" fill="#f43f5e" />\
+                                        <text x="335" y="44" font-family="Arial" font-size="10" fill="white" text-anchor="middle">AI</text>\
+                                        \
+                                        <!-- Animation elements -->\
+                                        <rect x="30" y="100" width="340" height="30" rx="0" fill="#f43f5e" opacity="0.05">\
+                                            <animate attributeName="opacity" values="0.05;0.1;0.05" dur="2s" repeatCount="indefinite" />\
+                                        </rect>\
+                                        <rect x="30" y="160" width="340" height="30" rx="0" fill="#f43f5e" opacity="0.05">\
+                                            <animate attributeName="opacity" values="0.05;0.1;0.05" dur="2s" repeatCount="indefinite" begin="0.5s" />\
+                                        </rect>\
+                                        <rect x="30" y="220" width="340" height="30" rx="0" fill="#f43f5e" opacity="0.05">\
+                                            <animate attributeName="opacity" values="0.05;0.1;0.05" dur="2s" repeatCount="indefinite" begin="1s" />\
+                                        </rect>\
+                                    </svg>\
+                                    \
+                                    <!-- Floating AI Element -->\
+                                    <div class="absolute top-5 right-5 p-3 bg-white rounded-lg shadow-lg border border-rose-100 flex items-center gap-2 float-element">\
+                                        <div class="w-8 h-8 rounded-full bg-rose-500 flex items-center justify-center">\
+                                            <i class="fas fa-tag text-white text-sm"></i>\
+                                        </div>\
+                                        <div>\
+                                            <p class="text-xs font-medium text-gray-900">AI Cataloger</p>\
+                                            <p class="text-xs text-rose-500">Processing...</p>\
+                                        </div>\
+                                    </div>\
+                                </div>\
+                            </div>\
+                        </div>\
+                    </div>\
+                    \
+                    <!-- AI Commerce Studio -->\
+                    <div class="studio-slide" data-index="3">\
+                        <div class="bg-gradient-to-br from-blue-50 to-white rounded-3xl shadow-xl overflow-hidden">\
+                            <div class="flex flex-col lg:flex-row items-center">\
+                                <div class="lg:w-1/2 p-8 lg:p-12">\
+                                    <div class="flex items-center mb-6">\
+                                        <div class="w-16 h-16 rounded-full bg-blue-500 flex items-center justify-center text-white">\
+                                            <i class="fas fa-chart-line text-2xl"></i>\
+                                        </div>\
+                                        <div class="ml-5">\
+                                            <h3 class="text-3xl font-bold text-gray-900">AI Commerce Studio</h3>\
+                                            <span class="coming-soon-badge mt-1">Coming Soon</span>\
+                                        </div>\
+                                    </div>\
+                                    \
+                                    <p class="text-xl text-gray-600 mb-8">The AI merchandising team that handles sourcing, pricing, assortment, and replenishment.</p>\
+                                    \
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8">\
+                                        <div class="flex items-center p-3 bg-blue-50 rounded-lg">\
+                                            <i class="fas fa-check-circle text-blue-500 mr-3 text-xl"></i>\
+                                            <span class="text-gray-700 font-medium">Dynamic Pricing</span>\
+                                        </div>\
+                                        <div class="flex items-center p-3 bg-blue-50 rounded-lg">\
+                                            <i class="fas fa-check-circle text-blue-500 mr-3 text-xl"></i>\
+                                            <span class="text-gray-700 font-medium">Inventory Management</span>\
+                                        </div>\
+                                        <div class="flex items-center p-3 bg-blue-50 rounded-lg">\
+                                            <i class="fas fa-check-circle text-blue-500 mr-3 text-xl"></i>\
+                                            <span class="text-gray-700 font-medium">Demand Forecasting</span>\
+                                        </div>\
+                                        <div class="flex items-center p-3 bg-blue-50 rounded-lg">\
+                                            <i class="fas fa-check-circle text-blue-500 mr-3 text-xl"></i>\
+                                            <span class="text-gray-700 font-medium">Supplier Optimization</span>\
+                                        </div>\
+                                    </div>\
+                                    \
+                                    <button class="btn-primary px-8 py-3 rounded-lg text-lg font-medium hover-3d">\
+                                        <span class="flex items-center">\
+                                            Join Waitlist\
+                                            <i class="fas fa-arrow-right ml-2"></i>\
+                                        </span>\
+                                    </button>\
+                                </div>\
+                                \
+                                <div class="lg:w-1/2 p-8 lg:p-12 relative">\
+                                    <svg class="w-full h-auto" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">\
+                                        <!-- Commerce Studio Interface -->\
+                                        <rect x="20" y="20" width="360" height="260" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1" class="shadow-lg" />\
+                                        \
+                                        <!-- Toolbar -->\
+                                        <rect x="20" y="20" width="360" height="40" rx="8" fill="#f8fafc" />\
+                                        <circle cx="40" cy="40" r="6" fill="#0ea5e9" />\
+                                        <circle cx="60" cy="40" r="6" fill="#4f46e5" />\
+                                        <circle cx="80" cy="40" r="6" fill="#10b981" />\
+                                        <rect x="100" y="34" width="60" height="12" rx="3" fill="#e2e8f0" />\
+                                        \
+                                        <!-- Dashboard Layout -->\
+                                        <rect x="30" y="70" width="160" height="100" rx="4" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" />\
+                                        <rect x="200" y="70" width="170" height="100" rx="4" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" />\
+                                        <rect x="30" y="180" width="340" height="90" rx="4" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" />\
+                                        \
+                                        <!-- Sales Chart -->\
+                                        <text x="40" y="85" font-family="Arial" font-size="10" fill="#1e293b" font-weight="bold">Sales Performance</text>\
+                                        <polyline points="40,140 60,120 80,130 100,110 120,115 140,100 160,105" fill="none" stroke="#0ea5e9" stroke-width="2" />\
+                                        <circle cx="60" cy="120" r="3" fill="#0ea5e9" />\
+                                        <circle cx="80" cy="130" r="3" fill="#0ea5e9" />\
+                                        <circle cx="100" cy="110" r="3" fill="#0ea5e9" />\
+                                        <circle cx="120" cy="115" r="3" fill="#0ea5e9" />\
+                                        <circle cx="140" cy="100" r="3" fill="#0ea5e9" />\
+                                        <circle cx="160" cy="105" r="3" fill="#0ea5e9" />\
+                                        \
+                                        <!-- Inventory Chart -->\
+                                        <text x="210" y="85" font-family="Arial" font-size="10" fill="#1e293b" font-weight="bold">Inventory Levels</text>\
+                                        <rect x="220" y="100" width="20" height="60" rx="2" fill="#0ea5e9" opacity="0.2" />\
+                                        <rect x="250" y="110" width="20" height="50" rx="2" fill="#0ea5e9" opacity="0.2" />\
+                                        <rect x="280" y="90" width="20" height="70" rx="2" fill="#0ea5e9" opacity="0.2" />\
+                                        <rect x="310" y="120" width="20" height="40" rx="2" fill="#0ea5e9" opacity="0.2" />\
+                                        <rect x="340" y="105" width="20" height="55" rx="2" fill="#0ea5e9" opacity="0.2" />\
+                                        \
+                                        <!-- Forecast Table -->\
+                                        <text x="40" y="195" font-family="Arial" font-size="10" fill="#1e293b" font-weight="bold">Demand Forecast</text>\
+                                        <line x1="40" y1="205" x2="360" y2="205" stroke="#e2e8f0" stroke-width="1" />\
+                                        \
+                                        <text x="50" y="220" font-family="Arial" font-size="8" fill="#64748b">Product</text>\
+                                        <text x="150" y="220" font-family="Arial" font-size="8" fill="#64748b">Current Stock</text>\
+                                        <text x="230" y="220" font-family="Arial" font-size="8" fill="#64748b">Forecast</text>\
+                                        <text x="300" y="220" font-family="Arial" font-size="8" fill="#64748b">Reorder</text>\
+                                        <text x="350" y="220" font-family="Arial" font-size="8" fill="#64748b">Price</text>\
+                                        \
+                                        <line x1="40" y1="225" x2="360" y2="225" stroke="#e2e8f0" stroke-width="1" />\
+                                        \
+                                        <text x="50" y="240" font-family="Arial" font-size="8" fill="#1e293b">Summer Dress</text>\
+                                        <text x="150" y="240" font-family="Arial" font-size="8" fill="#1e293b">125 units</text>\
+                                        <text x="230" y="240" font-family="Arial" font-size="8" fill="#1e293b">+15% (2 weeks)</text>\
+                                        <rect x="300" y="235" width="30" height="10" rx="5" fill="#10b981" opacity="0.2" />\
+                                        <text x="315" y="242" font-family="Arial" font-size="6" fill="#10b981">YES</text>\
+                                        <text x="350" y="240" font-family="Arial" font-size="8" fill="#1e293b">$59.99</text>\
+                                        \
+                                        <line x1="40" y1="245" x2="360" y2="245" stroke="#e2e8f0" stroke-width="1" />\
+                                        \
+                                        <text x="50" y="260" font-family="Arial" font-size="8" fill="#1e293b">Leather Bag</text>\
+                                        <text x="150" y="260" font-family="Arial" font-size="8" fill="#1e293b">42 units</text>\
+                                        <text x="230" y="260" font-family="Arial" font-size="8" fill="#1e293b">-5% (2 weeks)</text>\
+                                        <rect x="300" y="255" width="30" height="10" rx="5" fill="#f43f5e" opacity="0.2" />\
+                                        <text x="315" y="262" font-family="Arial" font-size="6" fill="#f43f5e">NO</text>\
+                                        <text x="350" y="260" font-family="Arial" font-size="8" fill="#1e293b">$129.99</text>\
+                                        \
+                                        <!-- AI Badge -->\
+                                        <rect x="310" y="30" width="50" height="20" rx="10" fill="#0ea5e9" />\
+                                        <text x="335" y="44" font-family="Arial" font-size="10" fill="white" text-anchor="middle">AI</text>\
+                                        \
+                                        <!-- Coming Soon Overlay -->\
+                                        <rect x="20" y="20" width="360" height="260" rx="8" fill="rgba(255,255,255,0.5)" />\
+                                        <rect x="120" y="130" width="160" height="40" rx="20" fill="#0ea5e9" />\
+                                        <text x="200" y="155" font-family="Arial" font-size="16" fill="white" text-anchor="middle">COMING SOON</text>\
+                                        \
+                                        <!-- Animation elements -->\
+                                        <rect x="120" y="130" width="160" height="40" rx="20" fill="none" stroke="#0ea5e9" stroke-width="2" opacity="0.5">\
+                                            <animate attributeName="stroke-width" values="2;4;2" dur="2s" repeatCount="indefinite" />\
+                                            <animate attributeName="opacity" values="0.5;0.8;0.5" dur="2s" repeatCount="indefinite" />\
+                                        </rect>\
+                                    </svg>\
+                                    \
+                                    <!-- Floating AI Element -->\
+                                    <div class="absolute top-5 right-5 p-3 bg-white rounded-lg shadow-lg border border-blue-100 flex items-center gap-2 float-element">\
+                                        <div class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center">\
+                                            <i class="fas fa-chart-pie text-white text-sm"></i>\
+                                        </div>\
+                                        <div>\
+                                            <p class="text-xs font-medium text-gray-900">AI Commerce</p>\
+                                            <p class="text-xs text-blue-500">Coming Soon</p>\
+                                        </div>\
+                                    </div>\
+                                </div>\
+                            </div>\
+                        </div>\
+                    </div>\
+                </div>\
+                \
+                <!-- Progress bar for auto-scroll timing -->\
+                <div class="studio-progress"></div>\
+                \
+                <!-- Studio Indicators -->\
+                <div class="studio-indicators mt-8">\
+                    <div class="studio-indicator active" data-index="0"></div>\
+                    <div class="studio-indicator" data-index="1"></div>\
+                    <div class="studio-indicator" data-index="2"></div>\
+                    <div class="studio-indicator" data-index="3"></div>\
+                </div>\
+            </div>\
+            \
+            <div class="mt-16 text-center">\
+                <button class="btn-primary px-8 py-3 rounded-lg text-lg font-medium text-white hover-3d">\
+                    Explore AI Agents\
+                </button>\
+            </div>\
+        </div>\
+    </section>\
+\
+<!-- Key Benefits Section -->\
+<section class="mt-20 container mx-auto px-4">\
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">\
+        <!-- Card 1 -->\
+        <div class="flow-card glow hover-3d p-6 text-center fade-in-up" style="animation-delay: 0.8s;">\
+            <div class="flow-icon pulse-icon mx-auto relative">\
+                <i class="fas fa-tachometer-alt"></i>\
+            </div>\
+            <h3 class="text-xl font-bold mb-3 text-gray-900">10x Faster</h3>\
+            <p class="text-gray-600">Accelerate your retail operations with AI-powered automation that works around the clock.</p>\
+        </div>\
+\
+        <!-- Card 2 -->\
+        <div class="flow-card glow hover-3d p-6 text-center fade-in-up" style="animation-delay: 0.9s;">\
+            <div class="flow-icon pulse-icon mx-auto relative" style="background: rgba(59, 130, 246, 0.1); color: var(--secondary);">\
+                <i class="fas fa-dollar-sign"></i>\
+            </div>\
+            <h3 class="text-xl font-bold mb-3 text-gray-900">50% Cost Reduction</h3>\
+            <p class="text-gray-600">Significantly lower operational costs by replacing multiple tools and reducing manual labor.</p>\
+        </div>\
+\
+        <!-- Card 3 -->\
+        <div class="flow-card glow hover-3d p-6 text-center fade-in-up" style="animation-delay: 1s;">\
+            <div class="flow-icon pulse-icon mx-auto relative">\
+                <i class="fas fa-chart-pie"></i>\
+            </div>\
+            <h3 class="text-xl font-bold mb-3 text-gray-900">30% Higher Conversion</h3>\
+            <p class="text-gray-600">Optimize every aspect of your retail business for maximum performance and sales.</p>\
+        </div>\
+    </div>\
+</section>\
+\
+    <!-- How It Works -->\
+    <section class="py-20 relative section-alt">\
+        <div class="container mx-auto px-4 relative z-10">\
+            <div class="text-center max-w-3xl mx-auto mb-16">\
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900">How Streamoid OS Works</h2>\
+                <p class="text-xl text-gray-600">A seamless AI-powered workflow that transforms your retail operations from end to end.</p>\
+            </div>\
+            \
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8 mb-16">\
+                <div class="md:w-1/2">\
+                    <div class="relative">\
+                        <div class="card p-6 rounded-xl mb-6 relative z-10">\
+                            <div class="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center text-white font-bold">1</div>\
+                            <h3 class="text-xl font-bold mb-3 text-gray-900">Connect Your Data</h3>\
+                            <p class="text-gray-600">Integrate your product information, digital assets, and business rules with our secure platform.</p>\
+                        </div>\
+                        \
+                        <div class="card p-6 rounded-xl mb-6 relative z-10 md:ml-8">\
+                            <div class="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center text-white font-bold">2</div>\
+                            <h3 class="text-xl font-bold mb-3 text-gray-900">Activate AI Agents</h3>\
+                            <p class="text-gray-600">Choose which AI-powered agents you need and configure them to match your brand requirements.</p>\
+                        </div>\
+                        \
+                        <div class="card p-6 rounded-xl relative z-10 md:ml-16">\
+                            <div class="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center text-white font-bold">3</div>\
+                            <h3 class="text-xl font-bold mb-3 text-gray-900">Scale & Optimize</h3>\
+                            <p class="text-gray-600">Let AI agents handle operations while you focus on strategy. Add more agents as you grow.</p>\
+                        </div>\
+                    </div>\
+                </div>\
+                \
+                <div class="md:w-1/2">\
+                    <div class="relative">\
+                        <div class="card p-8 rounded-xl overflow-hidden">\
+                            <svg class="w-full h-auto" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">\
+                                <defs>\
+                                    <linearGradient id="flowGrad" x1="0%" y1="0%" x2="100%" y2="100%">\
+                                        <stop offset="0%" stop-color="#4f46e5" stop-opacity="0.1" />\
+                                        <stop offset="100%" stop-color="#10b981" stop-opacity="0.1" />\
+                                    </linearGradient>\
+                                </defs>\
+                                \
+                                <!-- Background -->\
+                                <rect x="0" y="0" width="400" height="300" fill="url(#flowGrad)" />\
+                                \
+                                <!-- Data Sources -->\
+                                <rect x="20" y="40" width="80" height="40" rx="5" fill="#ffffff" stroke="#4f46e5" stroke-width="2" />\
+                                <text x="60" y="65" font-family="Arial" font-size="10" fill="#1e293b" text-anchor="middle">Product Data</text>\
+                                \
+                                <rect x="20" y="100" width="80" height="40" rx="5" fill="#ffffff" stroke="#4f46e5" stroke-width="2" />\
+                                <text x="60" y="125" font-family="Arial" font-size="10" fill="#1e293b" text-anchor="middle">Digital Assets</text>\
+                                \
+                                <rect x="20" y="160" width="80" height="40" rx="5" fill="#ffffff" stroke="#4f46e5" stroke-width="2" />\
+                                <text x="60" y="185" font-family="Arial" font-size="10" fill="#1e293b" text-anchor="middle">Brand Rules</text>\
+                                \
+                                <rect x="20" y="220" width="80" height="40" rx="5" fill="#ffffff" stroke="#4f46e5" stroke-width="2" />\
+                                <text x="60" y="245" font-family="Arial" font-size="10" fill="#1e293b" text-anchor="middle">Market Data</text>\
+                                \
+                                <!-- Arrows -->\
+                                <path d="M110,60 L150,150" stroke="#4f46e5" stroke-width="2" fill="none" stroke-dasharray="5,5" />\
+                                <path d="M110,120 L150,150" stroke="#4f46e5" stroke-width="2" fill="none" stroke-dasharray="5,5" />\
+                                <path d="M110,180 L150,150" stroke="#4f46e5" stroke-width="2" fill="none" stroke-dasharray="5,5" />\
+                                <path d="M110,240 L150,150" stroke="#4f46e5" stroke-width="2" fill="none" stroke-dasharray="5,5" />\
+                                \
+                                <!-- AI Engine -->\
+                                <circle cx="180" cy="150" r="40" fill="#ffffff" stroke="#4f46e5" stroke-width="2" />\
+                                <text x="180" y="145" font-family="Arial" font-size="12" fill="#1e293b" text-anchor="middle">Streamoid</text>\
+                                <text x="180" y="160" font-family="Arial" font-size="12" fill="#1e293b" text-anchor="middle">OS</text>\
+                                \
+                                <!-- Output Arrow -->\
+                                <path d="M220,150 L260,150" stroke="#10b981" stroke-width="2" fill="none" marker-end="url(#arrow)" />\
+                                <defs>\
+                                    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">\
+                                        <path d="M0,0 L0,6 L9,3 z" fill="#10b981" />\
+                                    </marker>\
+                                </defs>\
+                                \
+                                <!-- AI Studios -->\
+                                <rect x="280" y="40" width="100" height="40" rx="5" fill="#ffffff" stroke="#10b981" stroke-width="2" />\
+                                <text x="330" y="65" font-family="Arial" font-size="10" fill="#1e293b" text-anchor="middle">Design Agent</text>\
+                                \
+                                <rect x="280" y="100" width="100" height="40" rx="5" fill="#ffffff" stroke="#10b981" stroke-width="2" />\
+                                <text x="330" y="125" font-family="Arial" font-size="10" fill="#1e293b" text-anchor="middle">Content Agent</text>\
+                                \
+                                <rect x="280" y="160" width="100" height="40" rx="5" fill="#ffffff" stroke="#10b981" stroke-width="2" />\
+                                <text x="330" y="185" font-family="Arial" font-size="10" fill="#1e293b" text-anchor="middle">Catalog Agent</text>\
+                                \
+                                <rect x="280" y="220" width="100" height="40" rx="5" fill="#ffffff" stroke="#10b981" stroke-width="2" />\
+                                <text x="330" y="245" font-family="Arial" font-size="10" fill="#1e293b" text-anchor="middle">Commerce Agent</text>\
+                                \
+                                <!-- Result Arrows -->\
+                                <path d="M260,150 L270,60" stroke="#10b981" stroke-width="2" fill="none" stroke-dasharray="5,5" />\
+                                <path d="M260,150 L270,120" stroke="#10b981" stroke-width="2" fill="none" stroke-dasharray="5,5" />\
+                                <path d="M260,150 L270,180" stroke="#10b981" stroke-width="2" fill="none" stroke-dasharray="5,5" />\
+                                <path d="M260,150 L270,240" stroke="#10b981" stroke-width="2" fill="none" stroke-dasharray="5,5" />\
+                                \
+                                <!-- Pulse Animation -->\
+                                <circle cx="180" cy="150" r="45" fill="none" stroke="#4f46e5" stroke-width="1" opacity="0.5">\
+                                    <animate attributeName="r" from="45" to="60" dur="2s" repeatCount="indefinite" />\
+                                    <animate attributeName="opacity" from="0.5" to="0" dur="2s" repeatCount="indefinite" />\
+                                </circle>\
+                            </svg>\
+                        </div>\
+                    </div>\
+                </div>\
+            </div>\
+            <div class="mt-16 text-center">\
+                <button class="btn-primary px-8 py-3 rounded-lg text-lg font-medium text-white">\
+                    Schedule a Demo\
+                </button>\
+            </div>\
+        </div>\
+    </section>\
+\
+<!-- Testimonials Section -->\
+<section id="testimonials" class="py-20 bg-white relative overflow-hidden">\
+  <div class="absolute top-0 right-0 w-96 h-96 bg-indigo-100 rounded-full filter blur-3xl opacity-20"></div>\
+  <div class="container mx-auto px-4 relative z-10">\
+    <div class="text-center max-w-3xl mx-auto mb-16">\
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900">What Our Customers Say</h2>\
+      <p class="text-xl text-gray-600">Retailers around the world are transforming their businesses with Streamoid OS.</p>\
+    </div>\
+\
+    <!-- 3 Testimonials Side by Side -->\
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto auto-slide-carousel">\
+      <!-- Testimonial 1 -->\
+      <div class="card p-6 rounded-xl shadow-md bg-white">\
+        <div class="flex items-center mb-4">\
+          <div class="w-12 h-12 rounded-full bg-indigo-500 flex items-center justify-center text-white font-bold text-xl">J</div>\
+          <div class="ml-4">\
+            <h4 class="font-bold text-gray-900">Jessica Kim</h4>\
+            <p class="text-gray-500 text-sm">Head of E-commerce, StyleHouse</p>\
+          </div>\
+        </div>\
+        <div class="flex text-yellow-400 mb-3">\
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>\
+        </div>\
+        <p class="text-gray-600">"Streamoid OS has revolutionized our product launch process. The Design Agent creates specs ready for production, and the Catalog agent handles all our listings across channels."</p>\
+      </div>\
+\
+      <!-- Testimonial 2 -->\
+      <div class="card p-6 rounded-xl shadow-md bg-white">\
+        <div class="flex items-center mb-4">\
+          <div class="w-12 h-12 rounded-full bg-indigo-500 flex items-center justify-center text-white font-bold text-xl">M</div>\
+          <div class="ml-4">\
+            <h4 class="font-bold text-gray-900">Marcus Taylor</h4>\
+            <p class="text-gray-500 text-sm">CEO, Urban Threads</p>\
+          </div>\
+        </div>\
+        <div class="flex text-yellow-400 mb-3">\
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>\
+        </div>\
+        <p class="text-gray-600">"We've reduced operational costs by 40% while doubling our product catalog. The Content agent creates visuals that increase our conversion rates across all channels."</p>\
+      </div>\
+\
+      <!-- Testimonial 3 -->\
+      <div class="card p-6 rounded-xl shadow-md bg-white">\
+        <div class="flex items-center mb-4">\
+          <div class="w-12 h-12 rounded-full bg-indigo-500 flex items-center justify-center text-white font-bold text-xl">A</div>\
+          <div class="ml-4">\
+            <h4 class="font-bold text-gray-900">Aisha Patel</h4>\
+            <p class="text-gray-500 text-sm">Digital Director, LuxeWear</p>\
+          </div>\
+        </div>\
+        <div class="flex text-yellow-400 mb-3">\
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>\
+        </div>\
+        <p class="text-gray-600">"The modular approach of Streamoid OS let us start with Catalog Agent and expand over time. It has transformed our operations and freed our team to focus on strategy."</p>\
+      </div>\
+    </div>\
+\
+    <!-- Metrics Section -->\
+    <div class="mt-16 grid grid-cols-1 md:grid-cols-4 gap-6 max-w-6xl mx-auto">\
+      <div class="text-center bg-white p-6 rounded-xl shadow-sm border border-indigo-100">\
+        <div class="text-5xl font-bold bg-gradient-to-br from-indigo-500 to-purple-600 text-transparent bg-clip-text mb-2">85%</div>\
+        <p class="text-gray-600">Faster Time to Market</p>\
+      </div>\
+      <div class="text-center bg-white p-6 rounded-xl shadow-sm border border-indigo-100">\
+        <div class="text-5xl font-bold bg-gradient-to-br from-indigo-500 to-blue-600 text-transparent bg-clip-text mb-2">40%</div>\
+        <p class="text-gray-600">Cost Reduction</p>\
+      </div>\
+      <div class="text-center bg-white p-6 rounded-xl shadow-sm border border-indigo-100">\
+        <div class="text-5xl font-bold bg-gradient-to-br from-purple-600 to-indigo-500 text-transparent bg-clip-text mb-2">3x</div>\
+        <p class="text-gray-600">Catalog Growth</p>\
+      </div>\
+      <div class="text-center bg-white p-6 rounded-xl shadow-sm border border-indigo-100">\
+        <div class="text-5xl font-bold bg-gradient-to-br from-blue-600 to-indigo-500 text-transparent bg-clip-text mb-2">5.0</div>\
+        <p class="text-gray-600">Average Rating</p>\
+      </div>\
+    </div>\
+  </div>\
+</section>\
+\
+<script>\
+  // Optional: Auto-scroll logic if needed in future\
+</script>\
+\
+\
+<!-- CTA -->\
+<section class="py-20 relative overflow-hidden dark-section">\
+  <div class="absolute top-0 left-0 w-full h-full grid-pattern"></div>\
+  <div class="container mx-auto px-4 relative z-10">\
+    <div class="max-w-4xl mx-auto bg-white rounded-2xl p-10 border border-gray-100 shadow-xl">\
+      <div class="flex flex-col md:flex-row items-center">\
+        <div class="md:w-2/3 mb-8 md:mb-0 md:pr-8">\
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Ready to Transform Your Retail Business?</h2>\
+          <p class="text-xl text-gray-600 mb-6">Join retailers who are already using Streamoid OS to run their entire business with AI agents.</p>\
+          <div class="flex flex-col sm:flex-row gap-4">\
+            <button class="btn-primary px-8 py-3 rounded-lg text-lg font-medium text-white">\
+              Get Started Free\
+            </button>\
+            <button class="btn-secondary px-8 py-3 rounded-lg text-lg font-medium flex items-center justify-center">\
+              <i class="fas fa-calendar-alt mr-2"></i> Book a Demo\
+            </button>\
+          </div>\
+        </div>\
+        <div class="md:w-1/3">\
+          <div class="relative">\
+            <svg class="w-full h-auto" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">\
+              <!-- Outer Circles -->\
+              <circle cx="100" cy="100" r="80" fill="none" stroke="#4f46e5" stroke-width="2" stroke-dasharray="10,5" />\
+              <circle cx="100" cy="100" r="60" fill="#f8fafc" stroke="#10b981" stroke-width="2" />\
+              <circle cx="100" cy="100" r="40" fill="#f1f5f9" />\
+\
+              <!-- Orbiting Dots -->\
+              <g>\
+                <animateTransform \
+                  attributeName="transform" \
+                  type="rotate"\
+                  from="0 100 100"\
+                  to="360 100 100"\
+                  dur="20s"\
+                  repeatCount="indefinite" />\
+                <circle cx="180" cy="100" r="10" fill="#4f46e5" />\
+                <circle cx="100" cy="180" r="10" fill="#10b981" />\
+                <circle cx="20" cy="100" r="10" fill="#f43f5e" />\
+                <circle cx="100" cy="20" r="10" fill="#0ea5e9" />\
+              </g>\
+\
+              <!-- Pulsing Ring around center -->\
+              <circle cx="100" cy="100" r="25" fill="none" stroke="#4f46e5" stroke-width="2" opacity="0.6">\
+                <animate attributeName="r" values="25;40;25" dur="2.5s" repeatCount="indefinite" />\
+                <animate attributeName="opacity" values="0.6;0;0.6" dur="2.5s" repeatCount="indefinite" />\
+              </circle>\
+\
+              <!-- Inner solid circle -->\
+              <circle cx="100" cy="100" r="20" fill="#4f46e5" />\
+\
+              <!-- Streamoid OS Label -->\
+              <text x="100" y="105" font-family="Arial" font-size="10" fill="white" text-anchor="middle">Streamoid OS</text>\
+            </svg>\
+          </div>\
+        </div>\
+      </div>\
+    </div>\
+  </div>\
+</section>\
+\
+    <!-- Footer -->\
+    <footer class="bg-white py-12 border-t border-gray-200">\
+        <div class="container mx-auto px-4">\
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">\
+                <div>\
+                    <div class="text-2xl font-bold gradient-text mb-4">Streamoid OS</div>\
+                    <p class="text-gray-500 mb-4">The first AI OS that runs your retail business end-to-end, powered by intelligent agents.</p>\
+                    <div class="flex space-x-4">\
+                        <a href="#" class="text-gray-400 hover:text-gray-600 transition-colors">\
+                            <i class="fab fa-twitter"></i>\
+                        </a>\
+                        <a href="#" class="text-gray-400 hover:text-gray-600 transition-colors">\
+                            <i class="fab fa-linkedin"></i>\
+                        </a>\
+                        <a href="#" class="text-gray-400 hover:text-gray-600 transition-colors">\
+                            <i class="fab fa-facebook"></i>\
+                        </a>\
+                        <a href="#" class="text-gray-400 hover:text-gray-600 transition-colors">\
+                            <i class="fab fa-instagram"></i>\
+                        </a>\
+                    </div>\
+                </div>\
+                \
+                <div>\
+                    <h4 class="text-lg font-bold mb-4 text-gray-900">Product</h4>\
+                    <ul class="space-y-2">\
+                        <li><a href="#" class="text-gray-500 hover:text-gray-700 transition-colors">AI Agents</a></li>\
+                        <li><a href="#" class="text-gray-500 hover:text-gray-700 transition-colors">Features</a></li>\
+                        <li><a href="#" class="text-gray-500 hover:text-gray-700 transition-colors">Pricing</a></li>\
+                        <li><a href="#" class="text-gray-500 hover:text-gray-700 transition-colors">Roadmap</a></li>\
+                        <li><a href="#" class="text-gray-500 hover:text-gray-700 transition-colors">Integrations</a></li>\
+                    </ul>\
+                </div>\
+                \
+                <div>\
+                    <h4 class="text-lg font-bold mb-4 text-gray-900">Resources</h4>\
+                    <ul class="space-y-2">\
+                        <li><a href="#" class="text-gray-500 hover:text-gray-700 transition-colors">Documentation</a></li>\
+                        <li><a href="#" class="text-gray-500 hover:text-gray-700 transition-colors">Blog</a></li>\
+                        <li><a href="#" class="text-gray-500 hover:text-gray-700 transition-colors">Case Studies</a></li>\
+                        <li><a href="#" class="text-gray-500 hover:text-gray-700 transition-colors">Webinars</a></li>\
+                        <li><a href="#" class="text-gray-500 hover:text-gray-700 transition-colors">Help Center</a></li>\
+                    </ul>\
+                </div>\
+                \
+                <div>\
+                    <h4 class="text-lg font-bold mb-4 text-gray-900">Company</h4>\
+                    <ul class="space-y-2">\
+                        <li><a href="#" class="text-gray-500 hover:text-gray-700 transition-colors">About Us</a></li>\
+                        <li><a href="#" class="text-gray-500 hover:text-gray-700 transition-colors">Careers</a></li>\
+                        <li><a href="#" class="text-gray-500 hover:text-gray-700 transition-colors">Contact</a></li>\
+                        <li><a href="#" class="text-gray-500 hover:text-gray-700 transition-colors">Partners</a></li>\
+                        <li><a href="#" class="text-gray-500 hover:text-gray-700 transition-colors">Legal</a></li>\
+                    </ul>\
+                </div>\
+            </div>\
+            \
+            <div class="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center">\
+                <p class="text-gray-500 mb-4 md:mb-0">\'a9 2023 Streamoid Technologies. All rights reserved.</p>\
+                <div class="flex space-x-6">\
+                    <a href="#" class="text-gray-500 hover:text-gray-700 transition-colors text-sm">Privacy Policy</a>\
+                    <a href="#" class="text-gray-500 hover:text-gray-700 transition-colors text-sm">Terms of Service</a>\
+                    <a href="#" class="text-gray-500 hover:text-gray-700 transition-colors text-sm">Cookie Policy</a>\
+                </div>\
+            </div>\
+        </div>\
+    </footer>\
+    \
+    <script>\
+        // Mobile menu functionality\
+        const menuToggle = document.getElementById('menu-toggle');\
+        const closeMenu = document.getElementById('close-menu');\
+        const mobileMenu = document.getElementById('mobile-menu');\
+        \
+        menuToggle.addEventListener('click', () => \{\
+            mobileMenu.classList.add('active');\
+        \});\
+        \
+        closeMenu.addEventListener('click', () => \{\
+            mobileMenu.classList.remove('active');\
+        \});\
+        \
+        // Smooth scrolling for anchor links\
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => \{\
+            anchor.addEventListener('click', function(e) \{\
+                e.preventDefault();\
+                \
+                const targetId = this.getAttribute('href');\
+                if (targetId === '#') return;\
+                \
+                const targetElement = document.querySelector(targetId);\
+                if (targetElement) \{\
+                    // Close mobile menu if open\
+                    mobileMenu.classList.remove('active');\
+                    \
+                    // Scroll to target\
+                    window.scrollTo(\{\
+                        top: targetElement.offsetTop - 80, // Adjust for header height\
+                        behavior: 'smooth'\
+                    \});\
+                \}\
+            \});\
+        \});\
+        \
+        // Add scroll event listener for navbar\
+        window.addEventListener('scroll', () => \{\
+            const nav = document.querySelector('nav');\
+            if (window.scrollY > 10) \{\
+                nav.classList.add('shadow-md');\
+            \} else \{\
+                nav.classList.remove('shadow-md');\
+            \}\
+        \});\
+    </script>\
+<script>(function()\{function c()\{var b=a.contentDocument||a.contentWindow.document;if(b)\{var d=b.createElement('script');d.innerHTML="window.__CF$cv$params=\{r:'96491f50e7c906a8',t:'MTc1MzQxOTkyNy4wMDAwMDA='\};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)\}\}if(document.body)\{var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else\{var e=document.onreadystatechange||function()\{\};document.onreadystatechange=function(b)\{e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())\}\}\}\})();</script></body>\
+</html>\
+\
+}
